@@ -1,0 +1,14 @@
+html, body {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+
+}
+
+body {
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    min-height: 100vh;
+    font: normal 16px sans-serif;
+    padding-top: 3%; /* space for the top nav bar */
+    font-size: 14px !important;
+}
