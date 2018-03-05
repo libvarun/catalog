@@ -19,10 +19,10 @@
 $(document).ready(function () {
   var currentToken = getForgeToken();
 
-  if (window.location.href.indexOf('herokuapp') > 0) {
-        $("a").attr("href", 'https://bim360reports.autodesk.io');
-        $('#testinEnvWarning').modal('toggle');
-  }
+  // if (window.location.href.indexOf('herokuapp') > 0) {
+  //       $("a").attr("href", 'https://bim360reports.autodesk.io');
+  //       $('#testinEnvWarning').modal('toggle');
+  // }
 
   if (currentToken === '')
     $('#signInButton').click(forgeSignIn);
