@@ -1,8 +1,8 @@
 {
 	"Categories":[
-		{"Name":"Gears", "Thumbnail":"./img/engine.png","Description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+		{"Name":"Gears", "Thumbnail":"./img/gear.png","Description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
 		{"Name":"Pistons", "Thumbnail":"./img/piston.png","Description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
-		{"Name":"Pumps", "Thumbnail":"./img/engine.png","Description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+		{"Name":"Pumps", "Thumbnail":"./img/pump.png","Description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
 		{"Name":"Suspensions", "Thumbnail":"./img/suspension.png","Description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
 		{"Name":"Valves", "Thumbnail":"./img/valve.png","Description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
 	]
