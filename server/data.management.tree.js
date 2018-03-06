@@ -22,11 +22,30 @@ var token = require('./token');
 // web framework
 var express = require('express');
 var router = express.Router();
-
 var moment = require('moment');
 
 // forge
 var forgeSDK = require('forge-apis');
+
+router.get('/dm/rootjson', function (req, res) {
+  var tokenSession = new token(req.session);
+  
+  if (!tokenSession.isAuthorized()) {
+    res.status(401).end('Please login first');
+    return;
+  }
+  
+  var items = new forgeSDK.ItemsApi();
+  var projectId = 'a.YnVzaW5lc3M6YXV0b2Rlc2t2cGMjMjAxODAyMjIxMTkzNTIxMzE';
+  var itemId = 'urn:adsk.wipprod:dm.lineage:N7CD8CX9R3-hsdRh-Qwvmg';
+
+  items.getItemVersions(projectId, itemId, {}, tokenSession.getInternalOAuth(), tokenSession.getInternalCredentials())
+    .then(function (versions) {
+      
+      res.json(versions);
+    })
+
+});
 
 router.get('/dm/getTreeNode', function (req, res) {
   var tokenSession = new token(req.session);
@@ -44,6 +63,14 @@ router.get('/dm/getTreeNode', function (req, res) {
     var params = href.split('/');
     var resourceName = params[params.length - 2];
     var resourceId = params[params.length - 1];
+    console.log("resourceName:")
+    console.log(resourceName)
+    console.log("resourceId:")
+    console.log(resourceId)
+    console.log("res:")
+    console.log(res)
+    console.log("params:")
+    console.log(params)
     switch (resourceName) {
       case 'hubs':
         getProjects(resourceId, tokenSession, res);
@@ -118,7 +145,8 @@ function getProjects(hubId, tokenSession, res) {
               true
             ));
           });
-          res.json(projectsForTree);
+          return projectsForTree;
+          
         })
         .catch(function (error) {
           console.log(error);
