@@ -53,7 +53,7 @@ function appendCategories(Categories) {
 	for (var i = 0; i < Categories.length; i++) {
 		template += '<div class="col-sm-6 col-md-4">'+
 				        '<div class="thumbnail">'+
-				            '<img src="'+Categories[i].Thumbnail+'" alt="Engine">'+
+				            '<img src="'+Categories[i].Thumbnail+'" alt="">'+
 				          '<div class="caption">'+
 				            '<h3>'+Categories[i].Name+'</h3>'+
 				            '<p>'+Categories[i].Description+'</p>'+
