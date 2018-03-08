@@ -6,9 +6,63 @@ html, body {
 }
 
 body {
-    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-    min-height: 100vh;
-    font: normal 16px sans-serif;
-    padding-top: 3%; /* space for the top nav bar */
-    font-size: 14px !important;
+     background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+     min-height: 100vh;
+     font: normal 16px sans-serif;
+     padding-top: 3%; /* space for the top nav bar */
+     font-size: 14px !important;
+}
+
+.category{cursor:pointer;}
+.categoryitem{margin: 20px;border-bottom: 1px solid grey;cursor: pointer;}
+
+.loader{
+	display: none;
+	position: fixed;
+	left: 0px;
+	top: 52px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('../img/loading.gif') 50% 40% no-repeat rgb(249,249,249);
+}
+.categories_gallery,.collection_link{text-decoration: underline;cursor: pointer;}
+.breadcrumb{display: none; margin: 2% 10%;}
+.viewer_container{display: none;}
+.item_label{display: none;}
+.product_details{
+    position: absolute;
+    top: 23%;
+    left: 55%;
+    width: 32vw;
+}
+.pT15{padding: 15px;}
+.gallery-container{margin-top: 30px;}
+.mT6{margin-top: 6%;}
+#forgeViewer {
+    height: 66% !important;
+    width: 44vw !important;
+    /* display: block; */
+    position: absolute;
+    /* bottom: 0; */
+    top: 25%;
+    left: 9%;
+    /* right: 0; */
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+
+#forgeViewer {
+    height: 47% !important;
+    width: 40vw !important;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: 4%;
+    left: 28%;
+    right: 0;
+    
+}
 }

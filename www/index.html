@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/css/thumbnail-gallery.css">
 
   <!-- Notification ballons -->
-  <script src="js/libraries/notify.min.js"></script>
+  <!-- <script src="js/libraries/notify.min.js"></script> -->
   
   <!-- Autodesk Forge Viewer files -->
   <link rel="stylesheet" href="https://developer.api.autodesk.com//modelderivative/v2/viewers/style.min.css?v=v3.3.*" type="text/css" />
@@ -33,11 +33,12 @@
 
 </head>
 <body class="vsc-initialized">
-<nav class="navbar navbar-default navbar-fixed-top">
+<div class="loader"></div>
+<nav class="navbar navbar-default navbar-fixed-top pT15">
   <div class="container-fluid">
     <ul class="nav navbar-nav left">
       <li>
-        <a href="http://developer.autodesk.com" target="_blank">
+        <a href="#" target="_blank">
           <img alt="Autodesk Forge" src="/img/autodesk-forge.png" height="22" />
           ACME Forge Catalog
         </a>
@@ -60,15 +61,40 @@
 </nav>
 <!-- End of navbar -->
 
+<!-- START Category list -->
 <div class="container gallery-container">
-
   <div class="tz-gallery">
-
     <div class="row categories_list">
-
     </div>
-
   </div>
+</div>
+<!-- END Category list -->
+
+<!-- START Viewer -->
+<div class="container viewer_container">
+    <!-- <div class=""></div> -->
+          <div id="forgeViewer" > 
+          </div> 
+          <div class="product_details">
+            <h1 class="product_name"></h1>
+            <p class="product_desc"></p>
+            <button class="btn btn-success">BUY NOW</button>
+          </div>
+      <div class="row" >
+        <div class="col-md-9">
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
+</div>
+<!-- END Viewer -->
+
+  <div class="breadcrumb mT6">
+    <span class="categories_gallery">Categories</span> > <span class="collection_name"></span><span class="item_label"> > <span class="item_name"></span></span>
+  </div>
+
+<div class="container">
+  <div class="items_list"></div>
 
 </div>
 
