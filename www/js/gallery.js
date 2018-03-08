@@ -131,7 +131,7 @@ $(document).ready(function () {
 			var details = getDetailsByName(displayName);
 			// getThumbnail(Categories.body.included[i].relationships.thumbnails.meta.link.href);
 			template += '<div data-index="'+i+'" class="categoryitem row">'+
-							'<div class="col-md-3"><img src="'+Categories.body.included[i].relationships.thumbnails.meta.link.href+'" ></div>'+
+							'<div class="col-md-3"><img crossorigin="use-credentials" src="'+Categories.body.included[i].relationships.thumbnails.meta.link.href+'" ></div>'+
 							'<div class="col-md-9"><h1>'+details.Name+'</h1><p>'+details.Description+'</p></div>'+
 						'</div>';
 		}
