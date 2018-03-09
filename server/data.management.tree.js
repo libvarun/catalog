@@ -18,7 +18,7 @@
 
 // token handling in session
 var token = require('./token');
-
+var request = require("request");
 // web framework
 var express = require('express');
 var router = express.Router();
@@ -70,14 +70,25 @@ router.get('/dm/getCategoryList', function (req, res) {
 });
 
 router.get('/thumbnails', function (req, res) {    
- 
-    res.json("success");
-    // var url = 'https://developer.api.autodesk.com/modelderivative/v2/designdata/'+urn+'/thumbnail'
+  var href = decodeURIComponent(req.query.id);
+  var params = href.split('/');
 
+  request({
+    url: 'https://developer.api.autodesk.com/modelderivative/v2/designdata/'+params[0]+'/thumbnail',
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + params[1]
+    },
+    encoding: null,
+    responseType: 'buffer',
+    },
+    function(error, response, body) {
+      res.contentType('image/png')
+      res.end(body)
+    });
+  
 
-    
-
-  });
+});
 
 function getFolderjsonId(items){
   for (var i = 0; i < items.length; i++) {

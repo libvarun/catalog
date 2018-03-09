@@ -122,10 +122,10 @@ $(document).ready(function () {
 			if (displayName.includes('json')) continue;
 			var details = getDetailsByName(displayName);
 			// getThumbnail(Categories.body.included[i].relationships.thumbnails.meta.link.href);
-			var thumbnail_link = encodeURIComponent('urn='+Categories.body.data[i].id+'&token='+currentToken);
-			console.log('thumbnail_link: ',thumbnail_link)
+			var params = encodeURIComponent(Categories.body.included[i].relationships.derivatives.data.id+'/'+currentToken);
+			// console.log('thumbnail_link: ',thumbnail_link)
 			template += '<div data-index="'+i+'" class="categoryitem row">'+
-							'<div class="thumbnail_div col-md-3"><img src="'+location.protocol+'//'+location.host+location.pathname+'thumbnails/?url='+thumbnail_link+'" ></div>'+
+							'<div class="thumbnail_div col-md-3"><img src="'+location.protocol+'//'+location.host+location.pathname+'thumbnails/?id='+params+'" ></div>'+
 							'<div class="col-md-9"><h1>'+details.DisplayName+'</h1><p>'+details.ShortDescription+'</p></div>'+
 						'</div>';
 		}
