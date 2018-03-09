@@ -18,15 +18,7 @@
 
 
 $(document).ready(function () {
-	/*jQuery.ajax({
-	    url: '/dm/promiseexperiment',
-	    success: function (data) {
-	  	 var LatestVersion = data;	
-	  	 console.log('promiseexperiment:')
-	  	 console.log(LatestVersion)
-	  	 getCategories(LatestVersion)
-	    }
-	  });*/
+	
 	  var currentToken = getForgeToken();
 	  var categoryDetails = {};
   if (currentToken != '') {
@@ -130,47 +122,50 @@ $(document).ready(function () {
 			if (displayName.includes('json')) continue;
 			var details = getDetailsByName(displayName);
 			// getThumbnail(Categories.body.included[i].relationships.thumbnails.meta.link.href);
+			var thumbnail_link = encodeURIComponent('urn='+Categories.body.data[i].id+'&token='+currentToken);
+			console.log('thumbnail_link: ',thumbnail_link)
 			template += '<div data-index="'+i+'" class="categoryitem row">'+
-							'<div class="col-md-3"><img crossorigin="use-credentials" src="'+Categories.body.included[i].relationships.thumbnails.meta.link.href+'" ></div>'+
-							'<div class="col-md-9"><h1>'+details.Name+'</h1><p>'+details.Description+'</p></div>'+
+							'<div class="thumbnail_div col-md-3"><img src="'+location.protocol+'//'+location.host+location.pathname+'thumbnails/?url='+thumbnail_link+'" ></div>'+
+							'<div class="col-md-9"><h1>'+details.DisplayName+'</h1><p>'+details.ShortDescription+'</p></div>'+
 						'</div>';
 		}
 		$('.items_list').html(template);
 		$('.categoryitem').click(viewItem);
 		$('.gallery-container,.loader').hide();
-		$('.items_list,.breadcrumb').show();
+		$('.items_list_container,.breadcrumb').show();
 	}
 
 	function viewItem() {
 		$('.item_label').show();
 		$('.collection_name').addClass('collection_link');
 		var index = parseInt($(this).attr('data-index'));
-		$('.item_name,.product_name').text(CategoryItems.body.data[index].attributes.displayName)
 		var details = getDetailsByName(CategoryItems.body.data[index].attributes.displayName);
-		$('.product_desc').text(details.Description)
+		$('.item_name,.product_name').text(details.DisplayName)
+		$('.product_desc').html(details.LongDescription)
+		$('.inventory').text(details.Inventory)
 		// var FolderId = getFolderIdByName(Categories[index].Name);
 		console.log('view')
 		console.log(CategoryItems.body.included[index].relationships.derivatives.data.id)
 		launchViewer(CategoryItems.body.included[index].relationships.derivatives.data.id)
-		$('.items_list').hide();
+		$('.items_list_container').hide();
 		$('.viewer_container').show()
 	}
 	
-	/*function getThumbnail(url) {
+	function getThumbnail(url) {
 		jQuery.ajax({
 		    url: url,
 		    method: "GET",
-		    dataType: "binary",
-  			processData: false,
+        	encoding: null,
 		    headers: {
 		      'Authorization': 'Bearer ' + currentToken
 		    },
 		    success: function (data) {
-				console.log('imagebinaydata')
-				console.log(data)
+				/*console.log('imagebinaydata')
+				console.log(data)*/
+				return data;
 		    }
 		  });
-	}*/
+	}
 	function getDetailsByName(name) {
 		for (var i = 0; i < CategoriesJson.length; i++) {
 			if (name === CategoriesJson[i].Name){
@@ -186,16 +181,16 @@ $(document).ready(function () {
 	}
 
 	$('.categories_gallery').click(function(){
-		$('.items_list,.breadcrumb,.viewer_container,.item_label').hide();
+		$('.items_list_container,.breadcrumb,.viewer_container,.item_label').hide();
 		$('.collection_name').removeClass('collection_link');
 		$('.gallery-container').show();
 	})
 
 	$('.collection_name').click(function(){
 		if ($(this).hasClass('collection_link')) {
-			$('.items_list,.viewer_container,.item_label').hide();
+			$('.items_list_container,.viewer_container,.item_label').hide();
 			$('.collection_name').removeClass('collection_link');
-			$('.items_list').show();
+			$('.items_list_container').show();
 		}
 	})
 });

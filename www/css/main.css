@@ -49,6 +49,14 @@ body {
     left: 9%;
     /* right: 0; */
 }
+.logo_header{font-size: 18px;}
+.product_desc{margin-bottom: 30px;}
+.thumbnail_div{padding: 0}
+.items_list_container{margin: 0 auto;padding: 0;display: none;}
+.filter_type{list-style: none;padding-left: 0;margin-bottom: 30px;/* background-color: white; */}
+.filter_container{border: 2px solid grey;}
+.filter_container{padding: 10px;min-height: 439px;/* background-color: white; */}
+
 
 /* Large screens ----------- */
 @media only screen 
@@ -60,8 +68,8 @@ and (min-width : 1824px) {
     display: block;
     position: absolute;
     bottom: 0;
-    top: 4%;
-    left: 28%;
+    top: 25%;
+    left: 9%;
     right: 0;
     
 }
