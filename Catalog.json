@@ -1,8 +1,6 @@
 {
 	"Categories":[
 		{"Name":"Gears", "Thumbnail":"./img/gear.png","Description":"A gear or cogwheel is a rotating machine part having cut teeth, or cogs, which mesh with another toothed part to transmit torque."},
-		{"Name":"Pistons", "Thumbnail":"./img/piston.png","Description":"A piston is a component of reciprocating engines, reciprocating pumps."},
-		{"Name":"Pumps", "Thumbnail":"./img/pump.png","Description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
 		{"Name":"Suspensions", "Thumbnail":"./img/suspension.png","Description":"Suspension is the system of tires, tire air, springs, shock absorbers."},
 		{"Name":"Valves", "Thumbnail":"./img/valve.png","Description":"A valve is a device that regulates, directs or controls the flow of a fluid."}
 	]
