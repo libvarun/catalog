@@ -126,7 +126,7 @@ $(document).ready(function () {
 			// console.log('thumbnail_link: ',thumbnail_link)
 			template += '<div data-index="'+i+'" class="categoryitem row">'+
 							'<div class="thumbnail_div col-md-3"><img src="'+location.protocol+'//'+location.host+location.pathname+'thumbnails/?id='+params+'" ></div>'+
-							'<div class="col-md-9"><h1>'+details.DisplayName+'</h1><p>'+details.ShortDescription+'</p></div>'+
+							'<div class="col-md-9"><h2 class="item_title">'+details.DisplayName+'</h2><p>'+details.ShortDescription+'</p></div>'+
 						'</div>';
 		}
 		$('.items_list').html(template);
@@ -142,6 +142,7 @@ $(document).ready(function () {
 		var details = getDetailsByName(CategoryItems.body.data[index].attributes.displayName);
 		$('.item_name,.product_name').text(details.DisplayName)
 		$('.product_desc').html(details.LongDescription)
+		$('.price').html(details.Price)
 		$('.inventory').text(details.Inventory)
 		// var FolderId = getFolderIdByName(Categories[index].Name);
 		console.log('view')

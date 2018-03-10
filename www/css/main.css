@@ -14,22 +14,30 @@ body {
 }
 
 .category{cursor:pointer;}
-.categoryitem{margin: 20px;border-bottom: 1px solid grey;cursor: pointer;}
+.categoryitem{margin: 20px;/* border-bottom: 1px solid grey; */background-color: white;cursor: pointer;box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);/* padding-bottom: 5px; */}
 
 .loader{
 	display: none;
 	position: fixed;
 	left: 0px;
-	top: 52px;
+	top: 64px;
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
 	background: url('../img/loading.gif') 50% 40% no-repeat rgb(249,249,249);
 }
 .categories_gallery,.collection_link{text-decoration: underline;cursor: pointer;}
-.breadcrumb{display: none; margin: 2% 10%;}
+.breadcrumb{display: none;margin: 2% 10%;background-color: white;box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);}
 .viewer_container{display: none;}
 .item_label{display: none;}
+.item_title{color: #e67a00;}
+.filter_text{color: #4f4f79;}
+.items_search{box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);width: 95%;margin: 0 18px;line-height: 30px;font-size: 20px;/* margin-right: 20px; *//* border-radius: 0; *//* border: navajowhite; */}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 20px;color: #e67a00;
+}
+.price{font-weight: bold;}
+.filter_category{font-weight: bold;font-size: 16px;}
 .product_details{
     position: absolute;
     top: 23%;
@@ -37,6 +45,7 @@ body {
     width: 32vw;
 }
 .pT15{padding: 15px;}
+.pT14{padding-top: 14px;}
 .gallery-container{margin-top: 30px;}
 .mT6{margin-top: 6%;}
 #forgeViewer {
@@ -49,13 +58,13 @@ body {
     left: 9%;
     /* right: 0; */
 }
-.logo_header{font-size: 18px;}
+.logo_header{font-size: 32px;}
 .product_desc{margin-bottom: 30px;}
 .thumbnail_div{padding: 0}
 .items_list_container{margin: 0 auto;padding: 0;display: none;}
 .filter_type{list-style: none;padding-left: 0;margin-bottom: 30px;/* background-color: white; */}
-.filter_container{border: 2px solid grey;}
-.filter_container{padding: 10px;min-height: 439px;/* background-color: white; */}
+.filter_container{border: 0px solid grey;}
+.filter_container{padding: 10px;min-height: 439px;background-color: white;box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);}
 
 
 /* Large screens ----------- */

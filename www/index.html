@@ -39,13 +39,13 @@
     <ul class="nav navbar-nav left">
       <li class="logo_header">
         <a href="#" target="_blank">
-          <img alt="Autodesk Forge" src="/img/autodesk-forge.png" height="45" />
+          <img alt="Autodesk Forge" src="/img/autodesk-forge.png" height="50" />
           ACME Forge Catalog
         </a>
       </li>
     </ul>
 
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right pT14">
       <li>
         <a href="#" id="Help" onclick="$('#about').modal('show');"><span class="glyphicon glyphicon-info-sign"></span>
           <span id="infoText" title="About this Autodesk App">About</span></a>
@@ -79,6 +79,7 @@
             <h1 class="product_name"></h1>
             <p class="product_desc"></p>
             <p>Inventory: <span class="inventory"></span></p>
+            <p class="price_container">Price: <span class="price"></span></p>
             <button class="btn btn-success">BUY NOW</button>
           </div>
       <div class="row" >
@@ -96,23 +97,38 @@
 
 <div class="container items_list_container row">
   <div class="col-md-3 filter_container">
-    <h2>FilterBy</h2>
-    <p>Type1</p>
+    <h2 class="filter_text">Filter by</h2>
+    <p class="filter_category">Manufacturer</p>
     <ul class="filter_type">
-      <li><input type="checkbox" name="asdd">Engineering and construction</li>
-      <li><input type="checkbox" name="asdd">Automobiles diesel</li>
-      <li><input type="checkbox" name="asdd">Automobiles gasoline</li>
-      <li><input type="checkbox" name="asdd">Building parts</li>
+      <li><input type="checkbox" name="asdd">Acme Inc</li>
+      <li><input type="checkbox" name="asdd">Parts R Us</li>
+      <li><input type="checkbox" name="asdd">Broken Machinery Ltd</li>
+      <li><input type="checkbox" name="asdd">High Quality Gear</li>
+      <li><input type="checkbox" name="asdd">Knock Off Designs LLC</li>
     </ul>
-    <p>Type2</p>
+    <p class="filter_category">Price</p>
     <ul class="filter_type">
-      <li><input type="checkbox" name="asdd">filter1</li>
-      <li><input type="checkbox" name="asdd">filter2</li>
-      <li><input type="checkbox" name="asdd">filter3</li>
-      <li><input type="checkbox" name="asdd">filter4</li>
+      <li><input type="checkbox" name="asdd">$0-100</li>
+      <li><input type="checkbox" name="asdd">$100-500</li>
+      <li><input type="checkbox" name="asdd">$500-1000</li>
+      <li><input type="checkbox" name="asdd">$1000+</li>
+    </ul>
+    <p class="filter_category">Material</p>
+    <ul class="filter_type">
+      <li><input type="checkbox" name="asdd">Steel</li>
+      <li><input type="checkbox" name="asdd">Titanium</li>
+      <li><input type="checkbox" name="asdd">Brass</li>
+      <li><input type="checkbox" name="asdd">Other</li>
+    </ul>
+    <ul class="filter_type">
+      <li><input type="checkbox" name="asdd">Acme Prime only</li>
+      <li><input type="checkbox" name="asdd">In-stock</li>
     </ul>
   </div>
-  <div class="items_list col-md-9"></div>
+  <div class="col-md-9">
+    <input type="text" name="search" class="items_search form-control" placeholder="Search for item..">
+    <div class="items_list"></div>
+  </div>
 
 </div>
 
