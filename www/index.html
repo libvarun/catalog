@@ -1,141 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Forge Catalog</title>
-  <!-- Common packages: JQuery & Bootstrap -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/jstree/style.css"/>
-  <link rel="shortcut icon" href=/img/favicon.ico type=image/x-icon>
-  <link rel="stylesheet" href="/css/main.css"/>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jstree.min.js"></script>
-  <script src="/js/moment.min.js"></script>
-  <script src="/js/clipboard.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Forge Catalog</title>
+    <!-- Common packages: JQuery & Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jstree/style.css" />
+    <link rel="shortcut icon" href=/img/favicon.ico type=image/x-icon>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jstree.min.js"></script>
+    <script src="/js/moment.min.js"></script>
+    <script src="/js/clipboard.min.js"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-  <link rel="stylesheet" href="/css/thumbnail-gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="/css/thumbnail-gallery.css">
 
-  <!-- Notification ballons -->
-  <!-- <script src="js/libraries/notify.min.js"></script> -->
-  
-  <!-- Autodesk Forge Viewer files -->
-  <link rel="stylesheet" href="https://developer.api.autodesk.com//modelderivative/v2/viewers/style.min.css?v=v3.3.*" type="text/css" />
-  <script src="https://developer.api.autodesk.com//modelderivative/v2/viewers/three.min.js?v=v3.3.*"></script>
-  <script src="https://developer.api.autodesk.com//modelderivative/v2/viewers/viewer3D.min.js?v=v3.3.*"></script>
+    <!-- Notification ballons -->
+    <!-- <script src="js/libraries/notify.min.js"></script> -->
+
+    <!-- Autodesk Forge Viewer files -->
+    <link rel="stylesheet" href="https://developer.api.autodesk.com//modelderivative/v2/viewers/style.min.css?v=v3.3.*" type="text/css" />
+    <script src="https://developer.api.autodesk.com//modelderivative/v2/viewers/three.min.js?v=v3.3.*"></script>
+    <script src="https://developer.api.autodesk.com//modelderivative/v2/viewers/viewer3D.min.js?v=v3.3.*"></script>
 
 
-  <!-- BIM360 packages: login and authentication -->
-  <script src="/js/oauth.js"></script>
-  <script src="/js/forge.viewer.js"></script>
-  <script src="/js/gallery.js"></script>
+    <!-- BIM360 packages: login and authentication -->
+    <script src="/js/oauth.js"></script>
+    <script src="/js/forge.viewer.js"></script>
+    <script src="/js/gallery.js"></script>
 
 </head>
+
 <body class="vsc-initialized">
-<div class="loader"></div>
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav left">
-      <li class="logo_header">
-        <a href="#" target="_blank">
-          <img alt="Autodesk Forge" src="/img/autodesk-forge.png" height="50" />
-          ACME Forge Catalog
-        </a>
-      </li>
-    </ul>
+    <div class="loader"></div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav left">
+                <li class="logo_header">
+                    <a href="#" target="_blank">
+                        <img alt="Autodesk Forge" src="/img/autodesk-forge.png" height="50" /> ACME Forge Catalog
+                    </a>
+                </li>
+            </ul>
 
-    <ul class="nav navbar-nav navbar-right pT14">
-      <li>
-        <a href="#" id="Help" onclick="$('#about').modal('show');"><span class="glyphicon glyphicon-info-sign"></span>
+            <ul class="nav navbar-nav navbar-right pT14">
+                <li>
+                    <a href="#" id="Help" onclick="$('#about').modal('show');"><span class="glyphicon glyphicon-info-sign"></span>
           <span id="infoText" title="About this Autodesk App">About</span></a>
-      </li>
-      <li>
-        <a href="#" id="signInButton"><span class="glyphicon glyphicon-user" id="signInProfileImage"></span>
+                </li>
+                <li>
+                    <a href="#" class="signInButton"><span class="glyphicon glyphicon-user" id="signInProfileImage"></span>
           <span id="signInButtonText" title="Sign in with your Autodesk Account">Sign in</span></a>
-      </li>
-    </ul>
+                </li>
+            </ul>
 
 
-  </div>
-</nav>
-<!-- End of navbar -->
+        </div>
+    </nav>
+    <!-- End of navbar -->
 
-<!-- START Category list -->
-<div class="container gallery-container">
-  <div class="tz-gallery">
-    <div class="row categories_list">
+    <!-- START Category list -->
+    <div class="container gallery-container">
+        <div class="tz-gallery">
+            <div class="row categories_list">
+                <div class="login_prompt">Please <a href="#" class="signInButton">Sign In</a> To Get Started...</div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<!-- END Category list -->
+    <!-- END Category list -->
 
-<!-- START Viewer -->
-<div class="container viewer_container">
-    <!-- <div class=""></div> -->
-          <div id="forgeViewer" > 
-          </div> 
-          <div class="product_details">
+    <!-- START Viewer -->
+    <div class="container viewer_container">
+        <!-- <div class=""></div> -->
+        <div id="forgeViewer">
+        </div>
+        <div class="product_details">
             <h1 class="product_name"></h1>
             <p class="product_desc"></p>
             <p>Inventory: <span class="inventory"></span></p>
             <p class="price_container">Price: <span class="price"></span></p>
             <button class="btn btn-success">BUY NOW</button>
-          </div>
-      <div class="row" >
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+    <!-- END Viewer -->
+
+    <div class="breadcrumb mT6">
+        <span class="categories_gallery">Categories</span> > <span class="collection_name"></span><span class="item_label"> > <span class="item_name"></span></span>
+    </div>
+
+    <div class="container items_list_container row">
+        <div class="col-md-3 filter_container">
+            <h2 class="filter_text">Filter by</h2>
+            <p class="filter_category">Manufacturer</p>
+            <ul class="filter_type">
+                <li><input type="checkbox" name="asdd">Acme Inc</li>
+                <li><input type="checkbox" name="asdd">Parts R Us</li>
+                <li><input type="checkbox" name="asdd">Broken Machinery Ltd</li>
+                <li><input type="checkbox" name="asdd">High Quality Gear</li>
+                <li><input type="checkbox" name="asdd">Knock Off Designs LLC</li>
+            </ul>
+            <p class="filter_category">Price</p>
+            <ul class="filter_type">
+                <li><input type="checkbox" name="asdd">$0-100</li>
+                <li><input type="checkbox" name="asdd">$100-500</li>
+                <li><input type="checkbox" name="asdd">$500-1000</li>
+                <li><input type="checkbox" name="asdd">$1000+</li>
+            </ul>
+            <p class="filter_category">Material</p>
+            <ul class="filter_type">
+                <li><input type="checkbox" name="asdd">Steel</li>
+                <li><input type="checkbox" name="asdd">Titanium</li>
+                <li><input type="checkbox" name="asdd">Brass</li>
+                <li><input type="checkbox" name="asdd">Other</li>
+            </ul>
+            <ul class="filter_type">
+                <li><input type="checkbox" name="asdd">Acme Prime only</li>
+                <li><input type="checkbox" name="asdd">In-stock</li>
+            </ul>
+        </div>
         <div class="col-md-9">
+            <input type="text" name="search" class="items_search form-control" placeholder="Search for item..">
+            <div class="items_list"></div>
         </div>
-        <div class="col-md-3">
-        </div>
-      </div>
-</div>
-<!-- END Viewer -->
 
-  <div class="breadcrumb mT6">
-    <span class="categories_gallery">Categories</span> > <span class="collection_name"></span><span class="item_label"> > <span class="item_name"></span></span>
-  </div>
+    </div>
 
-<div class="container items_list_container row">
-  <div class="col-md-3 filter_container">
-    <h2 class="filter_text">Filter by</h2>
-    <p class="filter_category">Manufacturer</p>
-    <ul class="filter_type">
-      <li><input type="checkbox" name="asdd">Acme Inc</li>
-      <li><input type="checkbox" name="asdd">Parts R Us</li>
-      <li><input type="checkbox" name="asdd">Broken Machinery Ltd</li>
-      <li><input type="checkbox" name="asdd">High Quality Gear</li>
-      <li><input type="checkbox" name="asdd">Knock Off Designs LLC</li>
-    </ul>
-    <p class="filter_category">Price</p>
-    <ul class="filter_type">
-      <li><input type="checkbox" name="asdd">$0-100</li>
-      <li><input type="checkbox" name="asdd">$100-500</li>
-      <li><input type="checkbox" name="asdd">$500-1000</li>
-      <li><input type="checkbox" name="asdd">$1000+</li>
-    </ul>
-    <p class="filter_category">Material</p>
-    <ul class="filter_type">
-      <li><input type="checkbox" name="asdd">Steel</li>
-      <li><input type="checkbox" name="asdd">Titanium</li>
-      <li><input type="checkbox" name="asdd">Brass</li>
-      <li><input type="checkbox" name="asdd">Other</li>
-    </ul>
-    <ul class="filter_type">
-      <li><input type="checkbox" name="asdd">Acme Prime only</li>
-      <li><input type="checkbox" name="asdd">In-stock</li>
-    </ul>
-  </div>
-  <div class="col-md-9">
-    <input type="text" name="search" class="items_search form-control" placeholder="Search for item..">
-    <div class="items_list"></div>
-  </div>
-
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-<script>
-    baguetteBox.run('.tz-gallery');
-</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
 
 </body>
+
 </html>

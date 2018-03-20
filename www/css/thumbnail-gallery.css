@@ -18,6 +18,9 @@
 }
 
 .tz-gallery .thumbnail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 0;
     margin-bottom: 30px;
     background-color: #fff;
@@ -35,7 +38,12 @@
     border-radius: 4px 4px 0 0;
 }
 
-.tz-gallery .caption{
+.tz-gallery img {
+    margin: auto;
+    object-fit: contain;
+}
+
+.tz-gallery .caption {
     padding: 26px 30px;
     text-align: center;
 }
