@@ -9,7 +9,7 @@
     "cookie-parser": "1.4.3",
     "express": "4.15.3",
     "express-session": "1.15.3",
-    "forge-apis": "0.4.1",
+    "forge-apis": "^0.4.3",
     "jquery": "3.2.1",
     "jstree": "3.3.4",
     "moment": "2.18.1",
