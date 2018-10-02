@@ -30,7 +30,11 @@ Mac OSX/Linux (Terminal)
     export FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM FORGE DEVELOPER PORTAL>>
     export FORGE_CLIENT_SECRET=<<YOUR FORGE CLIENT SECRET>>
     export FORGE_CALLBACK_URL=<<YOUR CALLBACK URL FROM FORGE DEVELOPER PORTAL>>
-    npm run dev
+    export hubId=<<YOUR hubId FROM FUSION OR BIM>>
+    export projectId=<<YOUR projectId FROM FUSION OR BIM>>
+    export rootFolderId=<<YOUR rootFolderId FROM FUSION OR BIM>>
+    export rootjsonId=<<YOUR rootjsonId FROM FUSION OR BIM>>
+    npm start
 
 Windows (use <b>Node.js command line</b> from Start menu)
 
@@ -38,7 +42,11 @@ Windows (use <b>Node.js command line</b> from Start menu)
     set FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM FORGE DEVELOPER PORTAL>>
     set FORGE_CLIENT_SECRET=<<YOUR FORGE CLIENT SECRET>>
     set FORGE_CALLBACK_URL=<<YOUR CALLBACK URL FROM FORGE DEVELOPER PORTAL>>
-    npm run dev
+    set hubId=<<YOUR hubId FROM FUSION OR BIM>>
+    set projectId=<<YOUR projectId FROM FUSION OR BIM>>
+    set rootFolderId=<<YOUR rootFolderId FROM FUSION OR BIM>>
+    set rootjsonId=<<YOUR rootjsonId FROM FUSION OR BIM>>
+    npm start
 
 Open the browser: [http://localhost:3000](http://localhost:3000).
 

@@ -18,6 +18,7 @@
 
 // token handling in session
 var token = require('./token');
+var config = require('./config');
 var request = require("request");
 // web framework
 var express = require('express');
@@ -27,10 +28,10 @@ var moment = require('moment');
 // forge
 var forgeSDK = require('forge-apis');
 
-var hubId = 'a.YnVzaW5lc3M6YXV0b2Rlc2t2cGM';
-var projectId = 'a.YnVzaW5lc3M6YXV0b2Rlc2t2cGMjMjAxODAyMjIxMTkzNTIxMzE';
-var rootFolderId = 'urn:adsk.wipprod:fs.folder:co.mWGA4xFWREuqkFvUPL6vQw';
-var rootjsonId = 'urn:adsk.wipprod:dm.lineage:N7CD8CX9R3-hsdRh-Qwvmg';
+var hubId = config.ids.hubId;
+var projectId = config.ids.projectId;
+var rootFolderId = config.ids.rootFolderId;
+var rootjsonId = config.ids.rootjsonId;
 
 router.get('/dm/getInitValues', function (req, res) {
   var tokenSession = new token(req.session);

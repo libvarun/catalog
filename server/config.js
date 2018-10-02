@@ -23,14 +23,19 @@ module.exports = {
   // Autodesk Forge configuration
 
   // this this callback URL when creating your client ID and secret
-  callbackURL: process.env.FORGE_CALLBACK_URL || 'http://localhost:3000/api/forge/callback/oauth',
+  callbackURL: process.env.FORGE_CALLBACK_URL || '<<YOUR CALLBACK URL FROM FORGE DEVELOPER PORTAL>>',
 
   // set enviroment variables or hard-code here
   credentials: {
-    client_id: process.env.FORGE_CLIENT_ID || 'u8xODvw8Ix0SCOXbLZsPGGTTBl9gco8y',
-    client_secret: process.env.FORGE_CLIENT_SECRET || 'r8TSFVRtO4nswU3D',
+    client_id: process.env.FORGE_CLIENT_ID || '<<YOUR CLIENT ID FROM FORGE DEVELOPER PORTAL>>',
+    client_secret: process.env.FORGE_CLIENT_SECRET || '<<YOUR FORGE CLIENT SECRET>>',
   },
-
+  ids:{
+    hubId: process.env.hubId || '<<YOUR hubId FROM FUSION OR BIM>>',
+    projectId: process.env.projectId || '<<YOUR projectId FROM FUSION OR BIM>>',
+    rootFolderId: process.env.rootFolderId || '<<YOUR rootFolderId FROM FUSION OR BIM>>',
+    rootjsonId: process.env.rootjsonId || '<<YOUR rootjsonId FROM FUSION OR BIM>>',
+  },
   // Required scopes for your application on server-side
   scopeInternal: ['data:read','data:write','data:create','data:search'],
   // Required scope of the token sent to the client
