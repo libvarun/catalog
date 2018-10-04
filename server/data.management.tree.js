@@ -28,10 +28,10 @@ var moment = require('moment');
 // forge
 var forgeSDK = require('forge-apis');
 
-var hubId = config.ids.HUB_ID;
-var projectId = config.ids.PROJECT_ID;
-var rootFolderId = config.ids.ROOT_FOLDER_ID;
-var rootjsonId = config.ids.ROOT_JSON_ID;
+var hubId = config.ids.hub_id;
+var projectId = config.ids.project_id;
+var rootFolderId = config.ids.root_folder_id;
+var rootjsonId = config.ids.root_json_id;
 
 router.get('/dm/getInitValues', function (req, res) {
   var tokenSession = new token(req.session);
