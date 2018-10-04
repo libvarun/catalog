@@ -1,0 +1,7 @@
+{
+    "Categories": [
+        { "Name": "Gears", "Thumbnail": "./img/gear.png", "Description": "A gear is a rotating machine part having teeth which mesh with another gear to transmit torque." },
+        { "Name": "Suspensions", "Thumbnail": "./img/suspension.png", "Description": "Suspension is the system of tires, tire air, springs, shock absorbers." },
+        { "Name": "Valves", "Thumbnail": "./img/valve.png", "Description": "A valve is a device that regulates, directs or controls the flow of a fluid." }
+    ]
+}

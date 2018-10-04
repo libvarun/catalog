@@ -31,10 +31,10 @@ module.exports = {
     client_secret: process.env.FORGE_CLIENT_SECRET || '<<YOUR FORGE CLIENT SECRET>>',
   },
   ids:{
-    hubId: process.env.hubId || '<<YOUR hubId FROM FUSION OR BIM>>',
-    projectId: process.env.projectId || '<<YOUR projectId FROM FUSION OR BIM>>',
-    rootFolderId: process.env.rootFolderId || '<<YOUR rootFolderId FROM FUSION OR BIM>>',
-    rootjsonId: process.env.rootjsonId || '<<YOUR rootjsonId FROM FUSION OR BIM>>',
+    hubId: process.env.HUB_ID || '<<YOUR HUB_ID FROM FUSION OR BIM>>',
+    projectId: process.env.PROJECT_ID || '<<YOUR PROJECT_ID FROM FUSION OR BIM>>',
+    rootFolderId: process.env.ROOT_FOLDER_ID || '<<YOUR ROOT_FOLDER_ID FROM FUSION OR BIM>>',
+    rootjsonId: process.env.ROOT_JSON_ID || '<<YOUR ROOT_JSON_ID FROM FUSION OR BIM>>',
   },
   // Required scopes for your application on server-side
   scopeInternal: ['data:read','data:write','data:create','data:search'],

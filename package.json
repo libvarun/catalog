@@ -24,6 +24,6 @@
     "dev": "node start.js",
     "nodemon": "nodemon start.js --ignore www/"
   },
-  "author": "Jaime Rosales (Forge Partner Development)",
+  "author": "Varun Patil and Jaime Rosales (Forge Partner Development)",
   "license": "MIT"
 }

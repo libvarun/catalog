@@ -14,6 +14,9 @@ This sample is a Gallery Catalog Demo
 
 For using this sample, you need to log into your Autodesk developer account. Visit the [Forge Developer Portal](https://developer.autodesk.com) and sign up for an account, then [create an app](https://developer.autodesk.com/myapps/create). When asked for the 'callback URL' in your new app, use **http://localhost:3000/api/forge/callback/oauth**. Finally take note of the **Client ID** and **Client Secret**.
 
+JSON files found in resources folder contain information to be displayed in catalog website and should be placed in the folder of respective categories, details should be edited based on your Fusion/BIM project.
+ROOT_JSON_ID refers to CATALOG.json, which is in the root folder of your Fusion/BIM project.
+
 ### Run locally
 
 Install [NodeJS](https://nodejs.org).
@@ -30,10 +33,10 @@ Mac OSX/Linux (Terminal)
     export FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM FORGE DEVELOPER PORTAL>>
     export FORGE_CLIENT_SECRET=<<YOUR FORGE CLIENT SECRET>>
     export FORGE_CALLBACK_URL=<<YOUR CALLBACK URL FROM FORGE DEVELOPER PORTAL>>
-    export hubId=<<YOUR hubId FROM FUSION OR BIM>>
-    export projectId=<<YOUR projectId FROM FUSION OR BIM>>
-    export rootFolderId=<<YOUR rootFolderId FROM FUSION OR BIM>>
-    export rootjsonId=<<YOUR rootjsonId FROM FUSION OR BIM>>
+    export HUB_ID=<<YOUR HUB_ID FROM FUSION OR BIM>>
+    export PROJECT_ID=<<YOUR PROJECT_ID FROM FUSION OR BIM>>
+    export ROOT_FOLDER_ID=<<YOUR ROOT_FOLDER_ID FROM FUSION OR BIM>>
+    export ROOT_JSON_ID=<<YOUR ROOT_JSON_ID FROM FUSION OR BIM>>
     npm start
 
 Windows (use <b>Node.js command line</b> from Start menu)
@@ -42,10 +45,10 @@ Windows (use <b>Node.js command line</b> from Start menu)
     set FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM FORGE DEVELOPER PORTAL>>
     set FORGE_CLIENT_SECRET=<<YOUR FORGE CLIENT SECRET>>
     set FORGE_CALLBACK_URL=<<YOUR CALLBACK URL FROM FORGE DEVELOPER PORTAL>>
-    set hubId=<<YOUR hubId FROM FUSION OR BIM>>
-    set projectId=<<YOUR projectId FROM FUSION OR BIM>>
-    set rootFolderId=<<YOUR rootFolderId FROM FUSION OR BIM>>
-    set rootjsonId=<<YOUR rootjsonId FROM FUSION OR BIM>>
+    set HUB_ID=<<YOUR HUB_ID FROM FUSION OR BIM>>
+    set PROJECT_ID=<<YOUR PROJECT_ID FROM FUSION OR BIM>>
+    set ROOT_FOLDER_ID=<<YOUR ROOT_FOLDER_ID FROM FUSION OR BIM>>
+    set ROOT_JSON_ID=<<YOUR ROOT_JSON_ID FROM FUSION OR BIM>>
     npm start
 
 Open the browser: [http://localhost:3000](http://localhost:3000).
